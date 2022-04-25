@@ -6,6 +6,7 @@ import command.CleanCommand;
 import command.Command;
 import command.CreateCoffeeCommand;
 import container.Container;
+import container.FillCommand;
 import container.TypeOfContainer;
 
 import java.util.*;
@@ -22,7 +23,7 @@ public class CoffeeMachine {
         containers.put(TypeOfContainer.MILK, 5);
         commands.put("1", new CreateCoffeeCommand());
         commands.put("2", new CleanCommand());
-//        commands.put("3", new FillCommand());
+        commands.put("3", new FillCommand());
 //        commands.put("4", new StateCommand());
 //        commands.put("5", new OffCommand());
     }
