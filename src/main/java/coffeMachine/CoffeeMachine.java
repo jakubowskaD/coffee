@@ -1,9 +1,6 @@
 package coffeMachine;
 
-import command.CleanCommand;
-import command.Command;
-import command.CreateCoffeeCommand;
-import command.StateCommand;
+import command.*;
 import container.FillCommand;
 import container.TypeOfContainer;
 
@@ -23,7 +20,7 @@ public class CoffeeMachine {
         commands.put("2", new CleanCommand());
         commands.put("3", new FillCommand());
         commands.put("4", new StateCommand());
-//        commands.put("5", new OffCommand());
+        commands.put("5", new OffCommand());
     }
 
     public void run() {
