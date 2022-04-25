@@ -3,9 +3,9 @@ package coffee;
 public class Coffee {
 
     TypeOfCoffee typeOfCoffee;
-    int coffeeBeans;
-    int unitOfWater;
-    int unitOfMilk;
+    private int coffeeBeans;
+    private int unitOfWater;
+    private int unitOfMilk;
 
     public Coffee(TypeOfCoffee typeOfCoffee, int coffeeBeans, int unitOfWater, int unitOfMilk) {
         this.typeOfCoffee = typeOfCoffee;
