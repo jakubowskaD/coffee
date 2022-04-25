@@ -1,23 +1,15 @@
 package coffee;
 
-import java.util.List;
-
 public class Coffee {
 
-    public TypeOfCoffee typeOfCoffee;
     private int coffeeBeans;
     private int unitOfWater;
     private int unitOfMilk;
 
-    public Coffee(TypeOfCoffee typeOfCoffee, int coffeeBeans, int unitOfWater, int unitOfMilk) {
-        this.typeOfCoffee = typeOfCoffee;
+    public Coffee(int coffeeBeans, int unitOfWater, int unitOfMilk) {
         this.coffeeBeans = coffeeBeans;
         this.unitOfWater = unitOfWater;
         this.unitOfMilk = unitOfMilk;
-    }
-
-    public TypeOfCoffee getTypeOfCoffee() {
-        return typeOfCoffee;
     }
 
     public int getCoffeeBeans() {
