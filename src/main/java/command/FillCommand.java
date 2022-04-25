@@ -31,5 +31,6 @@ public class FillCommand implements Command {
     }
     public void fillContainer(TypeOfContainer typeOfContainer, CoffeeMachine coffeeMachine) {
         coffeeMachine.getContainers().put(typeOfContainer, CAPACITY);
+        System.out.println(typeOfContainer + " container full " + coffeeMachine.getContainers().get(typeOfContainer) + "/10");
     }
 }
