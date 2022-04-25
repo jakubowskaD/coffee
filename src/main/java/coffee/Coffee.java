@@ -1,5 +1,7 @@
 package coffee;
 
+import java.util.List;
+
 public class Coffee {
 
     TypeOfCoffee typeOfCoffee;
@@ -42,7 +44,4 @@ public class Coffee {
         this.unitOfMilk = unitOfMilk;
     }
 
-    public void makingCoffee(){
-
-    }
 }

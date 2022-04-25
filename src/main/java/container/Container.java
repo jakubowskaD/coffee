@@ -5,7 +5,7 @@ import coffee.Coffee;
 public class Container {
 
     TypeOfContainer typeOfContainer;
-    protected final int CAPACITY = 10;
+    public final int CAPACITY = 10;
     protected int actualCapacity;
 
     public Container(TypeOfContainer typeOfContainer, int actualCapacity) {

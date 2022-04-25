@@ -1,6 +1,13 @@
+import coffee.Coffee;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class CoffeeMachine {
+
+    public List<Coffee> coffeeList = new ArrayList<>();
+
 
     public void run() {
         Scanner scanner = new Scanner(System.in);
@@ -31,4 +38,7 @@ public class CoffeeMachine {
         }
     }
 
+    public void makeCoffee(){
+
+    }
 }
