@@ -2,9 +2,9 @@ package coffee;
 
 public class Coffee {
 
-    private int coffeeBeans;
-    private int unitOfWater;
-    private int unitOfMilk;
+    private final int coffeeBeans;
+    private final int unitOfWater;
+    private final int unitOfMilk;
 
     public Coffee(int coffeeBeans, int unitOfWater, int unitOfMilk) {
         this.coffeeBeans = coffeeBeans;
@@ -16,24 +16,13 @@ public class Coffee {
         return coffeeBeans;
     }
 
-    public void setCoffeeBeans(int coffeeBeans) {
-        this.coffeeBeans = coffeeBeans;
-    }
-
     public int getUnitOfWater() {
         return unitOfWater;
-    }
-
-    public void setUnitOfWater(int unitOfWater) {
-        this.unitOfWater = unitOfWater;
     }
 
     public int getUnitOfMilk() {
         return unitOfMilk;
     }
 
-    public void setUnitOfMilk(int unitOfMilk) {
-        this.unitOfMilk = unitOfMilk;
-    }
 
 }

@@ -5,17 +5,12 @@ import coffee.Coffee;
 import coffee.TypeOfCoffee;
 import container.TypeOfContainer;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class CreateCoffeeCommand implements Command {
-    public Map<TypeOfContainer, Integer> containers = new HashMap<>();
+
 
     public CreateCoffeeCommand() {
-        containers.put(TypeOfContainer.WATER, 5);
-        containers.put(TypeOfContainer.COFFEE, 5);
-        containers.put(TypeOfContainer.MILK, 5);
     }
 
     @Override
@@ -27,38 +22,43 @@ public class CreateCoffeeCommand implements Command {
         String coffeeNumber = scanner.nextLine();
         switch (coffeeNumber) {
             case "1":
-                makeCoffee(TypeOfCoffee.BLACK.getCoffee());
+                makeCoffee(TypeOfCoffee.BLACK.getCoffee(), coffeeMachine);
                 break;
             case "2":
-                makeCoffee(TypeOfCoffee.WHITE.getCoffee());
+                makeCoffee(TypeOfCoffee.WHITE.getCoffee(), coffeeMachine);
                 break;
             case "3":
-                makeCoffee(TypeOfCoffee.CAPPUCCINO.getCoffee());
+                makeCoffee(TypeOfCoffee.CAPPUCCINO.getCoffee(), coffeeMachine);
                 break;
         }
 
     }
 
-    public void makeCoffee(Coffee coffee) {
+    public void makeCoffee(Coffee coffee, CoffeeMachine coffeeMachine) {
         boolean canCoffeeBeMade = true;
-        if (containers.get(TypeOfContainer.WATER) - coffee.getUnitOfWater() < 0) {
+        if (coffeeMachine.getContainers().get(TypeOfContainer.WATER) - coffee.getUnitOfWater() < 0) {
             canCoffeeBeMade = false;
+            System.out.println("Fill water container");
         }
-        if (containers.get(TypeOfContainer.COFFEE) - coffee.getCoffeeBeans() < 0) {
+        if (coffeeMachine.getContainers().get(TypeOfContainer.COFFEE) - coffee.getCoffeeBeans() < 0) {
             canCoffeeBeMade = false;
+            System.out.println("Fill coffee container");
         }
-        if (containers.get(TypeOfContainer.MILK) - coffee.getUnitOfMilk() < 0) {
+        if (coffeeMachine.getContainers().get(TypeOfContainer.MILK) - coffee.getUnitOfMilk() < 0) {
             canCoffeeBeMade = false;
+            System.out.println("Fill milk container");
         }
         if (canCoffeeBeMade) {
-            Integer waterAmount = containers.get(TypeOfContainer.WATER) - coffee.getUnitOfWater();
-            containers.put(TypeOfContainer.WATER, waterAmount);
+            Integer waterAmount = coffeeMachine.getContainers().get(TypeOfContainer.WATER) - coffee.getUnitOfWater();
+            coffeeMachine.getContainers().put(TypeOfContainer.WATER, waterAmount);
 
-            Integer coffeeAmount = containers.get(TypeOfContainer.COFFEE) - coffee.getCoffeeBeans();
-            containers.put(TypeOfContainer.COFFEE, coffeeAmount);
+            Integer coffeeAmount = coffeeMachine.getContainers().get(TypeOfContainer.COFFEE) - coffee.getCoffeeBeans();
+            coffeeMachine.getContainers().put(TypeOfContainer.COFFEE, coffeeAmount);
 
-            Integer milkAmount = containers.get(TypeOfContainer.MILK) - coffee.getUnitOfMilk();
-            containers.put(TypeOfContainer.MILK, milkAmount);
+            Integer milkAmount = coffeeMachine.getContainers().get(TypeOfContainer.MILK) - coffee.getUnitOfMilk();
+            coffeeMachine.getContainers().put(TypeOfContainer.MILK, milkAmount);
+
+            System.out.println("coffee ready");
         }
     }
 }

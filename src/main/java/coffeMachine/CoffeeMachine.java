@@ -2,6 +2,7 @@ package coffeMachine;
 
 import coffee.Coffee;
 import coffee.TypeOfCoffee;
+import command.CleanCommand;
 import command.Command;
 import command.CreateCoffeeCommand;
 import container.Container;
@@ -13,10 +14,17 @@ public class CoffeeMachine {
 
 
     public Map<String, Command> commands = new HashMap<>();
+    public Map<TypeOfContainer, Integer> containers = new HashMap<>();
 
     public CoffeeMachine(){
-
+        containers.put(TypeOfContainer.WATER, 5);
+        containers.put(TypeOfContainer.COFFEE, 5);
+        containers.put(TypeOfContainer.MILK, 5);
         commands.put("1", new CreateCoffeeCommand());
+        commands.put("2", new CleanCommand());
+//        commands.put("3", new FillCommand());
+//        commands.put("4", new StateCommand());
+//        commands.put("5", new OffCommand());
     }
 
     public void run() {
@@ -62,9 +70,8 @@ public class CoffeeMachine {
 //                break;
     }
 
-
-
-
+    public Map<TypeOfContainer, Integer> getContainers() {
+        return containers;
     }
-
 }
+
