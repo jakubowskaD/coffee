@@ -2,6 +2,6 @@ package coffee;
 
 public enum TypeOfCoffee {
     BLACK,
-    WITHE,
+    WHITE,
     CAPPUCCINO;
 }

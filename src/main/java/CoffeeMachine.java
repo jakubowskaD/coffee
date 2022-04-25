@@ -11,15 +11,17 @@ public class CoffeeMachine {
 //    public List<Container> containerList = new ArrayList<>();
 
     public Map<Container, Integer> containers = new HashMap<>();
+    public Map<TypeOfCoffee, Coffee> coffeeMap = new HashMap<>();
+
 
 
     public CoffeeMachine(){
         containers.put(new Container(TypeOfContainer.WATER), 5);
         containers.put(new Container(TypeOfContainer.COFFEE), 5);
         containers.put(new Container(TypeOfContainer.MILK), 5);
-        coffeeList.add(new Coffee(TypeOfCoffee.BLACK,3,1,0 ));
-        coffeeList.add(new Coffee(TypeOfCoffee.WITHE, 2,1,1));
-        coffeeList.add(new Coffee(TypeOfCoffee.CAPPUCCINO,1,1,2));
+        coffeeMap.put(TypeOfCoffee.BLACK, new Coffee(TypeOfCoffee.BLACK,3,1,0 ));
+        coffeeMap.put(TypeOfCoffee.WHITE, new Coffee(TypeOfCoffee.WHITE, 2,1,1));
+        coffeeMap.put(TypeOfCoffee.CAPPUCCINO, new Coffee(TypeOfCoffee.CAPPUCCINO,1,1,2));
 
 //        containerList.add(new Container(TypeOfContainer.COFFEE));
 //        containerList.add(new Container(TypeOfContainer.WATER));
@@ -41,10 +43,13 @@ public class CoffeeMachine {
                 String coffeeNumber = scanner.nextLine();
                 switch (coffeeNumber){
                     case "1":
+                        makeCoffee(coffeeMap.get(TypeOfCoffee.BLACK));
                         break;
                     case "2":
+                        makeCoffee(coffeeMap.get(TypeOfCoffee.WHITE));
                         break;
                     case "3":
+                        makeCoffee(coffeeMap.get(TypeOfCoffee.CAPPUCCINO));
                         break;
                 }
                 break;
@@ -55,12 +60,14 @@ public class CoffeeMachine {
         }
     }
 
-    public void makeCoffee(TypeOfCoffee typeOfCoffee){
+    public void makeCoffee(Coffee coffee){
 //        Optional<Container> water = containerList.stream()
 //                .filter(container -> container.getTypeOfContainer().equals(TypeOfContainer.WATER))
 //                .findFirst();
 
-        if (containers.get(TypeOfContainer.WATER)>){
+        if (containers.get(new Container(TypeOfContainer.WATER))> Container.CAPACITY){
+            if (containers.get(new Container(TypeOfContainer.WATER)) - coffeeList.get())
+
 
         }
     }
