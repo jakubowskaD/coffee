@@ -10,15 +10,15 @@ public class CoffeeMachine {
 //    public List<Coffee> coffeeList = new ArrayList<>();
 //    public List<Container> containerList = new ArrayList<>();
 
-    public Map<Container, Integer> containers = new HashMap<>();
+    public Map<TypeOfContainer, Integer> containers = new HashMap<>();
     public Map<TypeOfCoffee, Coffee> coffeeMap = new HashMap<>();
 
 
 
     public CoffeeMachine(){
-        containers.put(new Container(TypeOfContainer.WATER), 5);
-        containers.put(new Container(TypeOfContainer.COFFEE), 5);
-        containers.put(new Container(TypeOfContainer.MILK), 5);
+        containers.put(TypeOfContainer.WATER, 5);
+        containers.put(TypeOfContainer.COFFEE, 5);
+        containers.put(TypeOfContainer.MILK, 5);
         coffeeMap.put(TypeOfCoffee.BLACK, new Coffee(TypeOfCoffee.BLACK,3,1,0 ));
         coffeeMap.put(TypeOfCoffee.WHITE, new Coffee(TypeOfCoffee.WHITE, 2,1,1));
         coffeeMap.put(TypeOfCoffee.CAPPUCCINO, new Coffee(TypeOfCoffee.CAPPUCCINO,1,1,2));
@@ -64,10 +64,26 @@ public class CoffeeMachine {
 //        Optional<Container> water = containerList.stream()
 //                .filter(container -> container.getTypeOfContainer().equals(TypeOfContainer.WATER))
 //                .findFirst();
-            boolean canCoffeBeMade = true;
-            if (containers.get(new Container(TypeOfContainer.WATER)) - coffeeMap.get(coffee.getTypeOfCoffee()).getUnitOfWater() < 0){
-                canCoffeBeMade = false;
-            }
+        boolean canCoffeeBeMade = true;
+        if (containers.get(TypeOfContainer.WATER) - coffee.getUnitOfWater() < 0){
+            canCoffeeBeMade = false;
+        }
+        if (containers.get(TypeOfContainer.COFFEE) - coffee.getCoffeeBeans() < 0){
+            canCoffeeBeMade = false;
+        }
+        if (containers.get(TypeOfContainer.MILK) - coffee.getUnitOfMilk() < 0){
+            canCoffeeBeMade = false;
+        }
+        if (canCoffeeBeMade){
+            Integer waterAmount = containers.get(TypeOfContainer.WATER) - coffee.getUnitOfWater();
+            containers.put(TypeOfContainer.WATER, waterAmount);
+
+            Integer coffeAmount = containers.get(TypeOfContainer.COFFEE) - coffee.getCoffeeBeans();
+            containers.put(TypeOfContainer.COFFEE, coffeAmount);
+
+            Integer milkAmount = containers.get(TypeOfContainer.MILK) - coffee.getUnitOfMilk();
+            containers.put(TypeOfContainer.MILK, milkAmount);
+        }
 
 
     }
