@@ -1,4 +1,4 @@
-package Coffees;
+package coffee;
 
 public enum TypeOfCoffee {
     BLACK,

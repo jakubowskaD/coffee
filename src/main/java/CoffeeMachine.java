@@ -2,10 +2,33 @@ import java.util.Scanner;
 
 public class CoffeeMachine {
 
-    Scanner scanner = new Scanner(System.in);
-    System.out.println("Menu:" +
-            "1. Coffee" +
-            "2. Clining" +
-            "3. Off");
+    public void run() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Menu:\n" +
+                "1. Coffee\n" +
+                "2. Cleaning\n" +
+                "3. Off\n");
+        String menuNumber = scanner.nextLine();
+        switch (menuNumber){
+            case "1":
+                System.out.println("1. Black\n" +
+                        "2. Withe\n" +
+                        "3. Cappuccino\n");
+                String coffeeNumber = scanner.nextLine();
+                switch (coffeeNumber){
+                    case "1":
+                        break;
+                    case "2":
+                        break;
+                    case "3":
+                        break;
+                }
+                break;
+            case "2":
+                break;
+            case "3":
+                break;
+        }
+    }
 
 }
