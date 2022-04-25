@@ -9,9 +9,9 @@ public class CleanCommand implements Command{
 
     @Override
     public void run(CoffeeMachine coffeeMachine) {
-        System.out.println("3.\n" +
-                        "2.\n" +
-                        "1.\n" +
+        System.out.println("3...\n" +
+                        "2...\n" +
+                        "1...\n" +
                         "CLEAN");
 
         boolean canCleanMachine = true;
