@@ -5,12 +5,18 @@ import coffee.Coffee;
 import coffee.TypeOfCoffee;
 import container.TypeOfContainer;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class CreateCoffeeCommand implements Command {
 
+    public Map<String, TypeOfCoffee> coffeeMap = new HashMap<>();
 
     public CreateCoffeeCommand() {
+        coffeeMap.put("1", TypeOfCoffee.BLACK);
+        coffeeMap.put("2", TypeOfCoffee.WHITE);
+        coffeeMap.put("3", TypeOfCoffee.CAPPUCCINO);
     }
 
     @Override
@@ -20,17 +26,18 @@ public class CreateCoffeeCommand implements Command {
                 "2. Withe\n" +
                 "3. Cappuccino\n");
         String coffeeNumber = scanner.nextLine();
-        switch (coffeeNumber) {
-            case "1":
-                makeCoffee(TypeOfCoffee.BLACK.getCoffee(), coffeeMachine);
-                break;
-            case "2":
-                makeCoffee(TypeOfCoffee.WHITE.getCoffee(), coffeeMachine);
-                break;
-            case "3":
-                makeCoffee(TypeOfCoffee.CAPPUCCINO.getCoffee(), coffeeMachine);
-                break;
-        }
+        makeCoffee(coffeeMap.get(coffeeNumber).getCoffee(), coffeeMachine);
+//        switch (coffeeNumber) {
+//            case "1":
+//                makeCoffee(TypeOfCoffee.BLACK.getCoffee(), coffeeMachine);
+//                break;
+//            case "2":
+//                makeCoffee(TypeOfCoffee.WHITE.getCoffee(), coffeeMachine);
+//                break;
+//            case "3":
+//                makeCoffee(TypeOfCoffee.CAPPUCCINO.getCoffee(), coffeeMachine);
+//                break;
+//        }
 
     }
 
