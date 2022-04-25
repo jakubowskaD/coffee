@@ -1,13 +1,30 @@
 import coffee.Coffee;
+import coffee.TypeOfCoffee;
+import container.Container;
+import container.TypeOfContainer;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class CoffeeMachine {
 
     public List<Coffee> coffeeList = new ArrayList<>();
+//    public List<Container> containerList = new ArrayList<>();
 
+    public Map<Container, Integer> containers = new HashMap<>();
+
+
+    public CoffeeMachine(){
+        containers.put(new Container(TypeOfContainer.WATER), 5);
+        containers.put(new Container(TypeOfContainer.COFFEE), 5);
+        containers.put(new Container(TypeOfContainer.MILK), 5);
+        coffeeList.add(new Coffee(TypeOfCoffee.BLACK,3,1,0 ));
+        coffeeList.add(new Coffee(TypeOfCoffee.WITHE, 2,1,1));
+        coffeeList.add(new Coffee(TypeOfCoffee.CAPPUCCINO,1,1,2));
+
+//        containerList.add(new Container(TypeOfContainer.COFFEE));
+//        containerList.add(new Container(TypeOfContainer.WATER));
+//        containerList.add(new Container(TypeOfContainer.MILK));
+    }
 
     public void run() {
         Scanner scanner = new Scanner(System.in);
@@ -38,7 +55,14 @@ public class CoffeeMachine {
         }
     }
 
-    public void makeCoffee(){
+    public void makeCoffee(TypeOfCoffee typeOfCoffee){
+//        Optional<Container> water = containerList.stream()
+//                .filter(container -> container.getTypeOfContainer().equals(TypeOfContainer.WATER))
+//                .findFirst();
 
+        if (containers.get(TypeOfContainer.WATER)>){
+
+        }
     }
+
 }

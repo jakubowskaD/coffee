@@ -1,6 +1,6 @@
 package container;
 
-enum TypeOfContainer {
+public enum TypeOfContainer {
     WATER,
     COFFEE,
     MILK;

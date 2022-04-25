@@ -4,7 +4,7 @@ import coffee.Coffee;
 
 public class Container {
 
-    TypeOfContainer typeOfContainer;
+    public TypeOfContainer typeOfContainer;
     public final int CAPACITY = 10;
     protected int actualCapacity;
 
@@ -13,12 +13,16 @@ public class Container {
         this.actualCapacity = actualCapacity;
     }
 
-    public Container(TypeOfContainer typeOfContainer) {
+    public Container(TypeOfContainer typeOfContaine) {
         this.typeOfContainer = typeOfContainer;
     }
 
     public int getCAPACITY() {
         return CAPACITY;
+    }
+
+    public TypeOfContainer getTypeOfContainer() {
+        return typeOfContainer;
     }
 
     public int getActualCapacity() {

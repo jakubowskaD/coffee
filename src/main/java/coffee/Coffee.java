@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Coffee {
 
-    TypeOfCoffee typeOfCoffee;
+    public TypeOfCoffee typeOfCoffee;
     private int coffeeBeans;
     private int unitOfWater;
     private int unitOfMilk;
