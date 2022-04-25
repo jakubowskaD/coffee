@@ -7,7 +7,7 @@ import java.util.*;
 
 public class CoffeeMachine {
 
-    public List<Coffee> coffeeList = new ArrayList<>();
+//    public List<Coffee> coffeeList = new ArrayList<>();
 //    public List<Container> containerList = new ArrayList<>();
 
     public Map<Container, Integer> containers = new HashMap<>();
@@ -64,12 +64,12 @@ public class CoffeeMachine {
 //        Optional<Container> water = containerList.stream()
 //                .filter(container -> container.getTypeOfContainer().equals(TypeOfContainer.WATER))
 //                .findFirst();
+            boolean canCoffeBeMade = true;
+            if (containers.get(new Container(TypeOfContainer.WATER)) - coffeeMap.get(coffee.getTypeOfCoffee()).getUnitOfWater() < 0){
+                canCoffeBeMade = false;
+            }
 
-        if (containers.get(new Container(TypeOfContainer.WATER))> Container.CAPACITY){
-            if (containers.get(new Container(TypeOfContainer.WATER)) - coffeeList.get())
 
-
-        }
     }
 
 }
