@@ -1,7 +1,6 @@
 package command;
 
 import coffeMachine.CoffeeMachine;
-import command.Command;
 import container.TypeOfContainer;
 
 import java.util.HashMap;

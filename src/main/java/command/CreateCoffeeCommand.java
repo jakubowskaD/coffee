@@ -27,18 +27,6 @@ public class CreateCoffeeCommand implements Command {
                 "3. Cappuccino\n");
         String coffeeNumber = scanner.nextLine();
         makeCoffee(coffeeMap.get(coffeeNumber).getCoffee(), coffeeMachine);
-//        switch (coffeeNumber) {
-//            case "1":
-//                makeCoffee(TypeOfCoffee.BLACK.getCoffee(), coffeeMachine);
-//                break;
-//            case "2":
-//                makeCoffee(TypeOfCoffee.WHITE.getCoffee(), coffeeMachine);
-//                break;
-//            case "3":
-//                makeCoffee(TypeOfCoffee.CAPPUCCINO.getCoffee(), coffeeMachine);
-//                break;
-//        }
-
     }
 
     public void makeCoffee(Coffee coffee, CoffeeMachine coffeeMachine) {
