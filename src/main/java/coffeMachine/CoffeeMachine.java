@@ -1,7 +1,7 @@
 package coffeMachine;
 
 import command.*;
-import container.FillCommand;
+import command.FillCommand;
 import container.TypeOfContainer;
 
 import java.util.*;
@@ -25,13 +25,16 @@ public class CoffeeMachine {
 
     public void run() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Menu:\n" +
-                "1. Coffee\n" +
-                "2. Cleaning\n" +
-                "3. Fill Container\n" +
-                "4. Show state\n" +
-                "5. Off\n");
-        commands.get(scanner.nextLine()).run(this);
+        boolean working = true;
+        while (working){
+            System.out.println("\nMenu:\n" +
+                    "1. Coffee\n" +
+                    "2. Cleaning\n" +
+                    "3. Fill Container\n" +
+                    "4. Show state\n" +
+                    "5. Off\n");
+            commands.get(scanner.nextLine()).run(this);
+        }
     }
 
     public Map<TypeOfContainer, Integer> getContainers() {
